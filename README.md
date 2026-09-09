@@ -110,6 +110,8 @@
 │ Simulation Mode if credentials.json is absent │
 └─────────────────────────────────────────────────────────────┘
 
+text
+
 ---
 
 ## 🧩 Tech Stack
@@ -156,6 +158,8 @@ CarbonScopeHackx/
 ├── vite.config.ts
 ├── tailwind.config.ts
 └── package.json
+
+text
 
 ---
 
