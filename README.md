@@ -1,18 +1,15 @@
 <div align="center">
 
+<img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/Flask-Backend-000000?style=for-the-badge&logo=flask&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/Vite-Build-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+<img src="https://img.shields.io/badge/Tailwind_CSS-Styling-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+
 # 🌊 CarbonScope
 
-### Real-Time Digital Carbon Footprint Tracker & Blue Carbon Marine Project Registry
-
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Flask](https://img.shields.io/badge/Flask-Python-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![Google APIs](https://img.shields.io/badge/Google_APIs-Gmail_·_Drive_·_YouTube-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://console.cloud.google.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-
-[![Demo Video](https://img.shields.io/badge/Demo_Video-Google_Drive-4285F4?style=for-the-badge&logo=google-drive)](https://drive.google.com/file/d/15MGhlgkW2ATjjL0ZTP2NJRyQtvw_NMYU/view?usp=drivesdk)
+### Digital Carbon Tracking • Blue Carbon Registry • Carbon Credits Marketplace • Climate Learning
 
 </div>
 
@@ -22,110 +19,147 @@
 
 | | Link |
 |---|---|
-| 🎬 **Demo Video** | [Watch on Google Drive](https://drive.google.com/file/d/15MGhlgkW2ATjjL0ZTP2NJRyQtvw_NMYU/view?usp=drivesdk) |
+| 🎬 **Demo Video** | [Watch on Google Drive](https://drive.google.com/file/d/15MGhlgkW2ATjjL0ZTP2NJRyQtvw_NMYU/view) |
 
 > [!WARNING]
-> **This project is not deployed publicly.** It integrates with Google APIs (Gmail, Drive, YouTube Data API v3) which require OAuth credentials and incur billing beyond free-tier limits. To try it, please **run it locally** following the [Getting Started](#-getting-started) steps below — it works fully in a local setup, including a simulation mode if no credentials are provided.
+> **This project is not deployed publicly.** It integrates with Google APIs (Gmail, Drive, YouTube Data API v3) which require OAuth credentials and incur billing beyond free-tier limits. To try it, please **run it locally** following the Getting Started steps below — a **Simulation Mode** is available if no credentials are provided.
 
 ---
 
 ## 🚀 What is This?
 
-**CarbonScope** is a full-stack web application built for **HackX** that tracks real-time digital carbon footprints and blue carbon (marine) project data. It connects to your Google account (Gmail, Drive, YouTube) to estimate CO₂ emissions from digital activities, while also providing a verified registry of marine carbon sequestration projects.
+**CarbonScope** is a full-stack platform built for **HackX** that unifies four connected sustainability domains into one product:
+
+1. **Personal Digital Carbon Tracker** — estimates CO₂ emissions from everyday digital activity (email, cloud storage, video streaming) via Google API integrations
+2. **Blue Carbon Registry** — a geospatial verification system for marine/mangrove ecosystem restoration projects
+3. **Carbon Credits Marketplace** — a Web3-enabled marketplace for trading verified carbon credits
+4. **Learn** — a gamified climate-education module tying real courses to platform capabilities
 
 ---
 
 ## ✨ Key Features
 
+### 📊 Dashboard & Activity
 | Feature | Description |
-|--------|-------------|
-| 🌍 **Digital Carbon Tracker** | Calculates your daily CO₂ footprint from emails sent, cloud storage used, and video streaming hours via Google APIs |
-| 📈 **Carbon Trend Charts** | Visualizes 6-month digital carbon vs. offset trends using Recharts |
-| 📅 **Weekly Breakdown** | Shows day-by-day carbon totals over the past 7 days |
-| 🌊 **Marine Project Registry** | Powered by the NCCR Marine dataset (500 records), with pagination, filtering, and per-project verification |
-| ✅ **Admin Verification Flow** | New projects start as "Pending"; admins can verify them via API |
-| 🔗 **Google API Actions** | Enables smart email scheduling, YouTube streaming optimization, and Google Drive file archiving |
-| 🔒 **User Authentication** | Signup/login with hashed passwords using Flask-SQLAlchemy + SQLite |
-| ⚙️ **Settings Panel** | User can update profile, notification preferences, and privacy settings |
+|---|---|
+| Carbon Footprint KPIs | Monthly footprint, actions automated, Green Points, lifetime CO₂ offset |
+| Carbon Footprint Trend | 6-month digital emissions vs. offset chart (Recharts) |
+| Activity Timeline | Day-by-day breakdown of automated carbon-saving actions (email batching, storage optimization, video quality adjustment) |
+| AI Recommendations | OpenAI-powered suggestions (e.g., Smart Email Scheduling, Cloud File Archiving) tagged by difficulty and quantified CO₂ impact per month |
+
+### 🌊 Blue Carbon Registry
+| Feature | Description |
+|---|---|
+| Geospatial Station Data | 500+ NCCR marine monitoring records across Indian coastal sites (Tuticorin, Mumbai, Goa, Mangalore, Puducherry, etc.), each with lat/long |
+| Ecological Metrics | Mangrove cover (ha), pH, salinity, dissolved oxygen, turbidity, biodiversity index, fish count, carbon sequestration rate (tCO₂/ha/yr) |
+| Verification Workflow | New submissions start as "Pending"; admins verify via API before data is published |
+| Restoration Projects | Aggregate stats — total projects, cumulative carbon offset (tons), communities engaged |
+| Submit Project Form | Community members can submit new marine project data for review |
+
+### 🛒 Carbon Credits Marketplace
+| Feature | Description |
+|---|---|
+| Web3 Wallet Integration | Connects a crypto wallet for on-chain-style credit trading |
+| Credit Listings | Mangrove Blue Carbon, Rainforest Conservation, Seagrass Restoration, Coastal Wetland credits — each with price/ton, availability, and rating |
+| Marketplace Stats | Total volume traded, average price/ton, % verified listings, active listing count |
+
+### 🎓 Learn
+| Feature | Description |
+|---|---|
+| Course Library | 6 courses spanning Beginner → Advanced (Digital Carbon Footprint, Blue Carbon Ecosystems, Carbon Credit Verification, AI-Powered Emission Reduction, Community-Led Restoration, ESG Reporting Standards) |
+| Skill Badges | Earned per completed course (Climate Basics, Ocean Guardian, Verification Expert, etc.) |
+| Progress Tracking | Badges earned, total learning time |
+
+### 🏆 Gamification
+- User level system (e.g., "Level 3 – Automation Master")
+- Green Points accumulation
+- Unlockable achievement badges with progress bars (First Step, Week Warrior, Automation Master, Carbon Champion, Community Leader, Elite Guardian)
+
+### ⚙️ Settings & Account
+- Profile management (name, email, organization)
+- Notification preferences (email alerts, carbon reduction alerts, project updates, achievement badges)
+- Privacy & Integrations controls
+- Data Management — export all data or permanently delete account (GDPR-style)
+
+### 🔒 Authentication
+- Signup/login with hashed passwords via Flask-SQLAlchemy + SQLite
 
 ---
 
 ## 🏗️ Architecture
-
-```
 ┌─────────────────────────────────────────────────────────────┐
-│                        BROWSER                              │
-│   React 18 + TypeScript + Vite + Tailwind CSS               │
-│   • Dashboard — digital carbon KPIs + trend charts          │
-│   • Marine Registry — paginated + filtered project table    │
-│   • Settings — profile, notifications, privacy              │
+│ BROWSER │
+│ React 18 + TypeScript + Vite + Tailwind CSS │
+│ - Dashboard & Activity - Blue Carbon Registry │
+│ - Marketplace - Learn │
+│ - Settings │
 └────────────────────────┬────────────────────────────────────┘
-                         │ HTTP (JSON) via proxy
-                         ▼
+│ HTTP (JSON) via proxy
+▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Flask Backend                             │
-│                                                             │
-│  /api/total_co2     — today's total CO₂ footprint           │
-│  /api/carbonchart   — 6-month carbon vs. offset data        │
-│  /api/data          — paginated marine project records      │
-│  /api/verify/<id>   — admin verification endpoint           │
-│  /execute_plan      — trigger Google API action             │
-│  /signup + /login   — user auth with hashed passwords       │
-│                                                             │
-│  Google OAuth → Gmail API + Drive API + YouTube API         │
-│  Simulation Mode if credentials.json is absent              │
+│ Flask Backend │
+│ │
+│ /api/total_co2, /api/carbonchart, /api/weekly/total │
+│ /api/data (paginated + filterable marine records) │
+│ /api/verify/<id> — admin verification endpoint │
+│ /execute_plan — trigger Google API automation action │
+│ /signup + /login — user auth with hashed passwords │
+│ /api/settings/* — profile, notifications, privacy │
+│ │
+│ Google OAuth → Gmail API + Drive API + YouTube API │
+│ Simulation Mode if credentials.json is absent │
 └─────────────────────────────────────────────────────────────┘
-```
+
+text
 
 ---
 
 ## 🧩 Tech Stack
 
 ### Frontend
-- **[React 18](https://react.dev)** — Component-based UI framework
-- **[TypeScript](https://www.typescriptlang.org)** — Full type safety across components
-- **[Vite](https://vitejs.dev)** — Fast build tool and dev server
-- **[Tailwind CSS](https://tailwindcss.com)** — Utility-first styling
-- **[shadcn/ui](https://ui.shadcn.com)** — Radix UI primitives
-- **[Recharts](https://recharts.org)** — Carbon trend and breakdown charts
-- **[TanStack React Query](https://tanstack.com/query)** — Data fetching and state
-- **[React Router DOM v6](https://reactrouter.com)** — Client-side routing
+- **React 18** — Component-based UI framework
+- **TypeScript** — Full type safety across components
+- **Vite** — Fast build tool and dev server
+- **Tailwind CSS** — Utility-first styling
+- **shadcn/ui** — Radix UI primitives
+- **Recharts** — Carbon trend and breakdown charts
+- **TanStack React Query** — Data fetching and state management
+- **React Router DOM v6** — Client-side routing
 
 ### Backend
-- **[Flask](https://flask.palletsprojects.com)** — Python web framework
-- **[Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com)** — ORM + SQLite database
-- **[Flask-CORS](https://flask-cors.readthedocs.io)** — Cross-origin support
+- **Flask** — Python web framework
+- **Flask-SQLAlchemy** — ORM + SQLite database
+- **Flask-CORS** — Cross-origin support
 
 ### Integrations & Data
-- **[Gmail API](https://developers.google.com/gmail/api)** — Email count for CO₂ estimation
-- **[Google Drive API](https://developers.google.com/drive)** — Cloud storage usage
-- **[YouTube Data API v3](https://developers.google.com/youtube/v3)** — Watch hours tracking
+- **Gmail API**, **Google Drive API**, **YouTube Data API v3** — digital activity tracking
+- **OpenAI API** — AI-generated carbon-reduction recommendations
 - **NCCR Marine Sample Dataset** — 500-record CSV of marine carbon sequestration projects
+- **Web3 wallet connection** — Marketplace credit trading interface
 
 ---
 
 ## 📁 Project Structure
-
-```
 CarbonScopeHackx/
 ├── backend/
-│   ├── app.py                      # Main Flask app — all API routes
-│   ├── auth.py                     # Auth blueprint (signup / login)
-│   ├── models.py                   # SQLAlchemy User model
-│   ├── quickstart.py               # Google OAuth quickstart helper
-│   ├── requirements.txt            # Python dependencies
-│   ├── NCCR_Marine_Sample_500.csv  # Marine carbon dataset
-│   └── google/
-│       ├── gmail.py                # Gmail email count helper
-│       ├── drive.py                # Drive storage helper
-│       └── youtube.py              # YouTube watch hours helper
+│ ├── app.py # Main Flask app — all API routes
+│ ├── auth.py # Auth blueprint (signup / login)
+│ ├── models.py # SQLAlchemy User model
+│ ├── quickstart.py # Google OAuth quickstart helper
+│ ├── requirements.txt # Python dependencies
+│ ├── NCCR_Marine_Sample_500.csv # Marine carbon dataset
+│ └── google/
+│ ├── gmail.py # Gmail email count helper
+│ ├── drive.py # Drive storage helper
+│ └── youtube.py # YouTube watch hours helper
 └── frontend/
-    ├── src/                        # React source code
-    ├── index.html
-    ├── vite.config.ts
-    ├── tailwind.config.ts
-    └── package.json
-```
+├── src/ # React source code
+├── index.html
+├── vite.config.ts
+├── tailwind.config.ts
+└── package.json
+
+text
 
 ---
 
@@ -140,58 +174,39 @@ CarbonScopeHackx/
 > **Simulation Mode**: If `credentials.json` is missing, the app runs in simulation mode — all Google API values are simulated and no real data is fetched. Great for local testing without billing.
 
 ### 1. Clone the Repository
-
 ```bash
-git clone https://github.com/AasthaKapoor27/CarbonScopeHackx.git
+git clone [https://github.com/AasthaKapoor27/CarbonScopeHackx.git](https://github.com/AasthaKapoor27/CarbonScopeHackx.git)
 cd CarbonScopeHackx
 ```
 
 ### 2. Start the Backend
-
 ```bash
 cd backend
-
-# Create and activate virtual environment
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-
-# Install dependencies
+source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
 # Place your credentials.json in the backend/ directory
-# Download from: Google Cloud Console → APIs & Services → Credentials
-
-# Run the Flask server
 python app.py
 ```
-
 ✅ Backend runs at `http://localhost:5000`
 
-On first run, a browser window will open for Google OAuth. After authentication, a `token.json` is saved automatically for subsequent runs.
-
 ### 3. Start the Frontend
-
 ```bash
 cd frontend
-
-# Install dependencies
-npm install       # or: bun install
-
-# Start development server
-npm run dev       # or: bun dev
+npm install   # or: bun install
+npm run dev   # or: bun dev
 ```
-
-✅ Open [http://localhost:5173](http://localhost:5173) 🚀
+✅ Open http://localhost:5173 🚀
 
 ---
 
 ## 🔌 API Reference
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
+|---|---|---|
 | `GET` | `/` | API overview and route listing |
 | `GET` | `/api/total_co2` | Total CO₂ for today (email + storage + video) |
-| `GET` | `/api/category/pie` | Carbon breakdown by category (for pie chart) |
+| `GET` | `/api/category/pie` | Carbon breakdown by category |
 | `GET` | `/api/weekly/total` | 7-day carbon totals |
 | `GET` | `/api/daily_breakdown` | Emails, storage GB, video hours for today |
 | `GET` | `/api/carbonchart` | 6-month digital carbon vs. offset data |
@@ -199,9 +214,9 @@ npm run dev       # or: bun dev
 | `GET` | `/api/data/<id>` | Single marine project record by ID |
 | `GET` | `/api/filter?column=X&value=Y` | Filter marine records by column value |
 | `GET` | `/api/columns` | List all available dataset columns |
-| `POST` | `/api/verify/<project_id>` | Mark a project as verified |
+| `POST` | `/api/verify/<project_id>` | Mark a marine project as verified |
 | `POST` | `/api/add` | Add a new marine project (starts as Pending) |
-| `POST` | `/execute_plan` | Trigger a Google API action |
+| `POST` | `/execute_plan` | Trigger a Google API automation action |
 | `GET` | `/api/settings` | Get user settings |
 | `POST` | `/api/settings/profile` | Update profile settings |
 | `POST` | `/api/settings/notifications` | Update notification preferences |
@@ -216,7 +231,6 @@ npm run dev       # or: bun dev
 No `.env` file is required by default. Google credentials are handled via `credentials.json` and the auto-generated `token.json`.
 
 For production or custom setups, update the database URI in `app.py`:
-
 ```python
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 # Replace with PostgreSQL URI for production:
@@ -227,10 +241,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 
 ## 🗺️ Roadmap
 
-- [ ] PostgreSQL migration for production-ready data persistence
+- [ ] PostgreSQL (with PostGIS) migration for production-ready, geospatially-indexed data
+- [ ] Map-based visualization of marine registry stations (Leaflet/Mapbox)
 - [ ] OAuth token refresh handling for long-running sessions
 - [ ] Per-user carbon history and trend analytics
-- [ ] Carbon offset recommendation engine
+- [ ] Formal on-chain smart contract layer for the Marketplace
+- [ ] Course-to-capability unlocks in the Learn module
 - [ ] Hosted deployment with managed Google API billing tier
 
 ---
@@ -238,7 +254,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 ## 👩‍💻 Team
 
 | Name |
-|------|
+|---|
 | Aastha Kapoor |
 | Aarushi Shreevastava |
 | Namita Narang |
@@ -253,9 +269,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ---
 
 <div align="center">
-
-**Built with 💚 for [HackX](https://hackx.manipal.edu) — tracking the carbon cost of our digital lives**
+<sub>Built with 💚 for HackX — tracking the carbon cost of our digital lives</sub>
 
 *If you found this useful, please ⭐ star the repository!*
-
 </div>
