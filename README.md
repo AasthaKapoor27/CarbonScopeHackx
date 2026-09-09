@@ -87,30 +87,80 @@
 ---
 
 ## 🏗️ Architecture
-┌─────────────────────────────────────────────────────────────┐
-│ BROWSER │
-│ React 18 + TypeScript + Vite + Tailwind CSS │
-│ - Dashboard & Activity - Blue Carbon Registry │
-│ - Marketplace - Learn │
-│ - Settings │
-└────────────────────────┬────────────────────────────────────┘
-│ HTTP (JSON) via proxy
-▼
-┌─────────────────────────────────────────────────────────────┐
-│ Flask Backend │
-│ │
-│ /api/total_co2, /api/carbonchart, /api/weekly/total │
-│ /api/data (paginated + filterable marine records) │
-│ /api/verify/<id> — admin verification endpoint │
-│ /execute_plan — trigger Google API automation action │
-│ /signup + /login — user auth with hashed passwords │
-│ /api/settings/* — profile, notifications, privacy │
-│ │
-│ Google OAuth → Gmail API + Drive API + YouTube API │
-│ Simulation Mode if credentials.json is absent │
-└─────────────────────────────────────────────────────────────┘
 
-text
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                         BROWSER                             │
+│                                                             │
+│   React 18 + TypeScript + Vite + Tailwind CSS              │
+│                                                             │
+│   • Dashboard & Activity                                   │
+│   • Blue Carbon Registry                                   │
+│   • Carbon Credits Marketplace                             │
+│   • Learn                                                  │
+│   • Settings                                               │
+└──────────────────────────────┬──────────────────────────────┘
+                               │
+                          HTTP / JSON
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                     FLASK BACKEND                           │
+│                                                             │
+│   API Routes                                                │
+│   • /api/total_co2                                         │
+│   • /api/carbonchart                                       │
+│   • /api/weekly/total                                      │
+│   • /api/data                                               │
+│   • /api/verify/<id>                                       │
+│   • /api/settings/*                                        │
+│   • /execute_plan                                          │
+│   • /signup                                                │
+│   • /login                                                 │
+│                                                             │
+│   Database                                                  │
+│   • Flask-SQLAlchemy                                       │
+│   • SQLite                                                  │
+│                                                             │
+│   Integrations                                              │
+│   • Google OAuth                                            │
+│   • Gmail API                                               │
+│   • Google Drive API                                       │
+│   • YouTube Data API v3                                    │
+│   • OpenAI API                                              │
+│                                                             │
+│   Simulation Mode                                          │
+│   • Used when credentials.json is unavailable              │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+             ┌──────────┼──────────┐
+             ▼          ▼          ▼
+        ┌────────┐ ┌────────┐ ┌──────────┐
+        │ Gmail  │ │ Drive  │ │ YouTube  │
+        │  API   │ │  API   │ │   API    │
+        └────────┘ └────────┘ └──────────┘
+```
+
+### Data Flow
+
+```text
+Google APIs
+     │
+     ▼
+Flask Backend
+     │
+     ├── Digital activity data
+     ├── Carbon calculations
+     ├── Marine registry data
+     └── AI recommendations
+              │
+              ▼
+       React Frontend
+              │
+              ▼
+        User Dashboard
+```
+
 
 ---
 
@@ -140,26 +190,61 @@ text
 ---
 
 ## 📁 Project Structure
-CarbonScopeHackx/
-├── backend/
-│ ├── app.py # Main Flask app — all API routes
-│ ├── auth.py # Auth blueprint (signup / login)
-│ ├── models.py # SQLAlchemy User model
-│ ├── quickstart.py # Google OAuth quickstart helper
-│ ├── requirements.txt # Python dependencies
-│ ├── NCCR_Marine_Sample_500.csv # Marine carbon dataset
-│ └── google/
-│ ├── gmail.py # Gmail email count helper
-│ ├── drive.py # Drive storage helper
-│ └── youtube.py # YouTube watch hours helper
-└── frontend/
-├── src/ # React source code
-├── index.html
-├── vite.config.ts
-├── tailwind.config.ts
-└── package.json
 
-text
+```text
+CarbonScopeHackx/
+│
+├── backend/
+│   ├── app.py
+│   │   └── Main Flask application and API routes
+│   │
+│   ├── auth.py
+│   │   └── Signup / login authentication
+│   │
+│   ├── models.py
+│   │   └── SQLAlchemy database models
+│   │
+│   ├── quickstart.py
+│   │   └── Google OAuth setup helper
+│   │
+│   ├── requirements.txt
+│   │   └── Python dependencies
+│   │
+│   ├── NCCR_Marine_Sample_500.csv
+│   │   └── Marine carbon registry dataset
+│   │
+│   └── google/
+│       ├── gmail.py
+│       │   └── Gmail activity helper
+│       │
+│       ├── drive.py
+│       │   └── Google Drive storage helper
+│       │
+│       └── youtube.py
+│           └── YouTube watch-time helper
+│
+├── frontend/
+│   ├── src/
+│   │   └── React + TypeScript source code
+│   │
+│   ├── index.html
+│   │   └── Frontend entry point
+│   │
+│   ├── vite.config.ts
+│   │   └── Vite configuration
+│   │
+│   ├── tailwind.config.ts
+│   │   └── Tailwind CSS configuration
+│   │
+│   └── package.json
+│       └── Node.js dependencies and scripts
+│
+├── README.md
+│   └── Project documentation
+│
+└── LICENSE
+    └── MIT License
+```
 
 ---
 
